@@ -1,0 +1,30 @@
+{% extends "blog/mobile/base.html" %}
+{% block content %}
+<script type="text/javascript"> 
+    if (screen.width > 699) {
+    document.location = "{% url 'content' %}";
+    }
+</script>
+<img src="/static/img/banner.jpg" style="width: 109%; margin-left: -20">
+<br><br>
+<div style="width: 100%;">
+        {% for Post in posts reversed %}
+        <div class="post-body">
+            <div class="post-head">{{Post.title}}</div>
+            <div class="post-content">
+                {{Post.content|safe}}
+                {% if user.is_authenticated %}
+                <a href=/adminblog/post/{{Post.id}}/change>Edit</a>
+                {% endif %}
+                <hr style="margin-bottom: 0">
+            </div>  
+            <div class="post-sub">{{Post.date_posted|date:"F d, Y"}} - Posted by {{Post.author}}</div>
+        </div><br>
+        {% endfor %}
+</div>
+<br>
+{% endblock content%}
+
+
+
+    

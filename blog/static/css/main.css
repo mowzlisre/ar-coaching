@@ -1,0 +1,94 @@
+nav{
+  overflow: hidden;
+  list-style-type: none;
+  display: block;
+  background-color: rgb(163, 0, 163);
+  text-decoration: none;
+  color: white;
+  width: 100%;
+  height: 56px;
+}
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0 10%;
+  overflow: hidden;
+  width: 100%;          
+}
+li{         
+  float: left;
+}
+li a{
+  display: inline-block;
+  color: #ffffff;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  font-size: 16px;
+}
+li 
+a:hover {
+  background-color: rgb(163, 0, 163);
+  color: rgb(255, 255, 255);
+  text-decoration: none 
+}
+footer{
+  padding: 14px;
+  text-align: center;
+  background-color: rgb(163, 0, 163);
+  color: white;
+  width: 100%;
+  height: 56px;
+}
+.column {
+  float: left;
+}
+.left {
+  width: 73%;
+}
+.right {
+  width: 26%;
+  border-left: 1px solid grey;
+  padding-left: 1%;
+}
+.post-body{
+  float: auto;
+  box-shadow: 1px 5px 10px rgb(218, 218, 218);
+  margin: 0 2%
+}
+.post-head{
+  background-color: rgb(163, 0, 163);
+  width: 100%;
+  padding: 14px 24px;
+  color: white;
+}
+.post-content{
+  background-color: white;
+  width: 100%;
+  padding: 14px 24px;
+  color: black;
+  padding-bottom: 0px  
+}
+.post-sub{
+  background-color: white;
+  width: 100%;
+  padding: 14px 24px;
+  color: black;
+  font-size: 13px
+
+}
+.fa {
+  padding: 16.5px;
+  font-size: 19.33px;
+  width: 40px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+  color: white;
+}
+.fa:hover {
+  color: white;
+}
+.side{
+  font-size: 11px
+}

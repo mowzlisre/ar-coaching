@@ -1,0 +1,102 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        body {
+          font-family: "Lato", sans-serif;
+        }
+        
+        .sidenav {
+          height: 100%;
+          width: 0;
+          position: fixed;
+          z-index: 1;
+          top: 0;
+          left: 0;
+          background-color: #111;
+          overflow-x: hidden;
+          transition: 0.5s;
+          padding-top: 60px;
+        }
+        
+        .sidenav a {
+          padding: 8px 8px 8px 32px;
+          text-decoration: none;
+          font-size: 25px;
+          color: #818181;
+          display: block;
+          transition: 0.3s;
+        }
+        
+        .sidenav a:hover {
+          color: #f1f1f1;
+        }
+        
+        .sidenav .closebtn {
+          position: absolute;
+          top: 0;
+          right: 25px;
+          font-size: 36px;
+          margin-left: 50px;
+        }
+        
+        @media screen and (max-height: 450px) {
+          .sidenav {padding-top: 15px;}
+          .sidenav a {font-size: 18px;}
+        }
+    </style>
+</head>
+<body style="background-color: rgb(238, 238, 238)">
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a style="margin-left: -15">AR Coaching</a>
+        <a style="font-size: 14px; color: rgb(95, 95, 95)" href="{% url 'mcontent' %}">Blog</a>       
+        <a style="font-size: 14px; color: rgb(95, 95, 95)" href="{% url 'mabout' %}">About Us</a>
+        <a style="font-size: 14px; color: rgb(95, 95, 95)" href="{% url 'mcontact' %}">Contact Us</a> 
+        <a style="margin-left: -15">Announcements</a>
+        {% for Announce in announces %}
+        <a style="font-size: 14px; color: rgb(95, 95, 95)">{{Announce.announcement}}</a>
+        {% endfor %} 
+    </div>
+  <nav>
+    <ul style="padding-right: 10; padding-left: 0">
+        <li><span style="font-size:24px;cursor:pointer" onclick="openNav()" class="fa fa-bars"></span></li>
+        <li><a href="{% url 'mcontent' %}">AR Coaching Center</a></li>
+        {% if not user.is_authenticated %}
+        <li style="float: right; padding-top: 3px; margin-left: -10px"><a href="{% url 'mlogin' %}" class="fa fa-user"></a></li>
+        {% else %}
+        <li style="float: right; padding-top: 3px; margin-left: -10px"><a href="{% url 'mlogout' %}" class="fa fa-sign-out"></a></li>
+        <li style="float: right; padding-top: 3px; margin-left: -10px"><a href="{% url 'mcreatepost' %}" class="fa fa-pencil"></a></li>
+        {% endif %}
+    </ul>  
+</nav>
+    <div class="container">
+        {% block content %}
+        {% endblock content %} 
+    </div>
+    
+    <footer>
+        Copyrighted 2019
+    </footer>
+    <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+        }
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

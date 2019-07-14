@@ -1,0 +1,32 @@
+{% extends "blog/mobile/base.html" %}
+{% block content%}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+<script type="text/javascript"> 
+    if (screen.width > 699) {
+    document.location = "{% url 'createpost' %}";
+    }
+</script>
+<br>
+<h5>Post Creation Portal</h5>
+<div class="row" >
+    <form action="{% url 'createpost' %}" method="post" autocomplete="off" style="width: 100%; padding: 5%">
+        {% csrf_token %}
+        {{form1.media}}
+        {{form1|crispy}}
+        <button type="submit" class="btn btn-primary">Post</button>
+    </form>
+</div>
+<hr>
+<h5>Announcement Creation Portal</h5>            
+<div class="row">
+    <form action="{% url 'createpost' %}" method="post" autocomplete="off" style="width: 100%; padding: 5%">
+        {% csrf_token %}
+        <label for="">Announcement Note*</label>
+        <input type="text" name="announcement" class="form-control">
+        <br>
+        <button type="submit" class="btn btn-primary">Post</button>
+    </form>       
+</div>
+<br><br><br>
+{% endblock content%}
