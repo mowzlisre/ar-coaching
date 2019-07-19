@@ -19,7 +19,7 @@ from django.urls import path, include
 from users import views as user_views
 
 urlpatterns = [
-    path('admin', admin.site.urls, name='admin'),
+    path('admin/', admin.site.urls, name='admin'),
     path('', include('blog.urls')),
     path('register/', user_views.register, name='register'),
     path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),

@@ -9,8 +9,7 @@ from django.http import JsonResponse
 from .forms import PostForm, AnnouncementForm
 
 
-def home(request):
-    return render(request, 'blog/home.html')
+
     
 def content(request):
     context={
@@ -19,11 +18,14 @@ def content(request):
        }
     return render(request, 'blog/content.html',context)
 
-def contact(request):
-    return render(request, 'blog/contact.html')
+
 
 def about(request):
-    return render(request, 'blog/about.html')
+    context={
+        'posts': Post.objects.all(),
+        'announces': Announcement.objects.all().order_by('-id')[:7]
+       }
+    return render(request, 'blog/about.html',context)
 
 class LoginView(View):
     template_name="blog/login.html"
@@ -73,6 +75,8 @@ class PostCreateView(View,LoginRequiredMixin):
                 post.title=request.POST.get('title')
                 post.content=form1.cleaned_data.get('content')
                 post.author=request.user
+                post.link=request.POST.get('link')
+                post.tag=request.POST.get('tag')
                 post.save()
                 return redirect('content')
                 form1=PostForm(request.POST)
@@ -94,3 +98,31 @@ class PostDetailView(View):
         return render(request,self.template_name,{'post':post})
 
 
+def pgtrb(request):
+    context={
+        'posts': Post.objects.filter(tag='PG-TRB'),
+        'announces': Announcement.objects.all().order_by('-id')[:7]
+    }
+    print(Post.objects.filter(tag='PG-TRB'))
+    return render(request, "posts/pgtrb.html",context)
+
+def polytrb(request):
+    context={
+        'posts': Post.objects.filter(tag='POLY-TRB'),
+        'announces': Announcement.objects.all().order_by('-id')[:7]
+    }
+    return render(request, "posts/polytrb.html",context)
+
+def engrtrb(request):
+    context={
+        'posts': Post.objects.filter(tag='ENGR-TRB'),
+        'announces': Announcement.objects.all().order_by('-id')[:7]
+    }
+    return render(request, "posts/engrtrb.html",context)
+
+def tnset(request):
+    context={
+        'posts': Post.objects.filter(tag='TNSET'),
+        'announces': Announcement.objects.all().order_by('-id')[:7]
+    }
+    return render(request, "posts/tnset.html",context)

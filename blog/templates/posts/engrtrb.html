@@ -1,14 +1,12 @@
 {% extends "blog/base.html" %}
-{% block content%}
+{% block content %}
 <script type="text/javascript"> 
     if (screen.width <= 699) {
-    document.location = "{% url 'mcontent' %}";
+    document.location = "{% url 'mengrtrb' %}";
     }
 </script>
-<div>
-    <img src="/static/img/banner.jpg" width="100%">
-</div>
-<br>
+ENGRTRB
+{% for post in posts %}
 <div class="row">
     <div class="left">
         {% for Post in posts reversed %}
@@ -27,22 +25,6 @@
         </div><br>
         {% endfor %}
     </div>
-    <div class="right">        
-        <div class="post-body">
-            <div class="post-head">Announcements</div>
-            {% for Announce in announces %}
-            <div class="post-content" style="margin-top: 10px; padding-top: 10px; padding-bottom: 0px">
-                <p style="margin-bottom: 0">{{Announce.announcement}}</p>
-                <hr style="margin-top: 2;margin-bottom: 2">
-                <p style="font-size: 10px; padding-bottom: 7;">{{Announce.author}} - {{Announce.time}}</p>
-            </div> 
-            {% endfor %} 
-        </div>
-        
-    </div>
-</div><br>
-{% endblock content%}
-
-
-
-    
+</div>
+{% endfor %}
+{% endblock content %}

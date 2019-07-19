@@ -4,7 +4,7 @@ from .models import Post, Announcement
 class PostForm(ModelForm):
     class Meta:
         model=Post
-        fields=['title','content']
+        fields=['title','content','link','tag']
 
 class AnnouncementForm(ModelForm):
     class Meta:

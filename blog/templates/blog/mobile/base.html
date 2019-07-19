@@ -59,9 +59,12 @@
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a style="margin-left: -15">AR Coaching</a>
+        <a style="font-size: 14px; color: rgb(95, 95, 95)" href="{% url 'mpgtrb' %}">PGTRB</a>
+        <a style="font-size: 14px; color: rgb(95, 95, 95)" href="{% url 'mpolytrb' %}">POLYTRB</a>
+        <a style="font-size: 14px; color: rgb(95, 95, 95)" href="{% url 'mengrtrb' %}">ENGR/CLGE</a>
+        <a style="font-size: 14px; color: rgb(95, 95, 95)" href="{% url 'mtnset' %}">TNSET</a>
         <a style="font-size: 14px; color: rgb(95, 95, 95)" href="{% url 'mcontent' %}">Blog</a>       
         <a style="font-size: 14px; color: rgb(95, 95, 95)" href="{% url 'mabout' %}">About Us</a>
-        <a style="font-size: 14px; color: rgb(95, 95, 95)" href="{% url 'mcontact' %}">Contact Us</a> 
         <a style="margin-left: -15">Announcements</a>
         {% for Announce in announces %}
         <a style="font-size: 14px; color: rgb(95, 95, 95)">{{Announce.announcement}}</a>

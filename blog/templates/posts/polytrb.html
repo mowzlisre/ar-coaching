@@ -1,0 +1,9 @@
+{% extends "blog/base.html" %}
+{% block content %}
+<script type="text/javascript"> 
+    if (screen.width <= 699) {
+    document.location = "{% url 'mpolytrb' %}";
+    }
+</script>
+POLYTRB
+{% endblock content %}

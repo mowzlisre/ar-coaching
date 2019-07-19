@@ -1,0 +1,26 @@
+{% extends "blog/base.html" %}
+{% block content %}
+
+PGTRB
+{% for post in posts %}
+<div class="row">
+    <div class="left">
+        {% for Post in posts reversed %}
+        <div class="post-body">
+            <div class="post-head">{{Post.title}}</div>
+            <div class="post-content">
+                {{Post.content|safe}}
+                {% if user.is_autheticated %}
+                <a href=/adminblog/post/{{Post.id}}/change>Edit</a>
+                {% endif %}
+                <hr style="margin-bottom: 0">
+            </div>  
+            <div class="post-sub">{{Post.date_posted|date:"F d, Y"}} - Posted by {{Post.author}}
+                <a href="http://{{Post.link}}" class="fa fa-download" style="color: black"></a>
+            </div>
+        </div><br>
+        {% endfor %}
+    </div>
+</div>
+{% endfor %}
+{% endblock content %}

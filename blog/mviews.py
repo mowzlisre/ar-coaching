@@ -18,12 +18,6 @@ def content(request):
        }
     return render(request, 'blog/mobile/content.html',context)
 
-def contact(request):
-    context={
-        'posts': Post.objects.all(),
-        'announces': Announcement.objects.all().order_by('-id')[:7]
-       }
-    return render(request, 'blog/mobile/contact.html',context)
 
 def about(request):
     context={
@@ -80,6 +74,8 @@ class PostCreateView(View,LoginRequiredMixin):
                 post.title=request.POST.get('title')
                 post.content=form1.cleaned_data.get('content')
                 post.author=request.user
+                post.link=request.POST.get('link')
+                post.tag=request.POST.get('tag')
                 post.save()
                 return redirect('content')
                 form1=PostForm(request.POST)
@@ -100,4 +96,30 @@ class PostDetailView(View):
         post=Post.objects.get(pk=pk)
         return render(request,self.template_name,{'post':post})
 
+def pgtrb(request):
+    context={
+        'posts': Post.objects.filter(tag='PG-TRB'),
+        'announces': Announcement.objects.all().order_by('-id')[:7]
+    }
+    return render(request, "posts/mobile/pgtrb.html",context)
 
+def polytrb(request):
+    context={
+        'posts': Post.objects.filter(tag='POLY-TRB'),
+        'announces': Announcement.objects.all().order_by('-id')[:7]
+    }
+    return render(request, "posts/mobile/polytrb.html",context)
+
+def engrtrb(request):
+    context={
+        'posts': Post.objects.filter(tag='ENGR-TRB'),
+        'announces': Announcement.objects.all().order_by('-id')[:7]
+    }
+    return render(request, "posts/mobile/engrtrb.html",context)
+
+def tnset(request):
+    context={
+        'posts': Post.objects.filter(tag='TNSET'),
+        'announces': Announcement.objects.all().order_by('-id')[:7]
+    }
+    return render(request, "posts/mobile/tnset.html",context)
