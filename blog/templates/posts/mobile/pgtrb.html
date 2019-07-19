@@ -1,6 +1,10 @@
 {% extends "blog/mobile/base.html" %}
 {% block content %}
-
+<script type="text/javascript"> 
+    if (screen.width > 699) {
+    document.location = "{% url 'pgtrb' %}";
+    }
+</script>
 PGTRB
 {% for post in posts %}
 <div class="row">
