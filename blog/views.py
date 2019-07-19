@@ -103,7 +103,7 @@ def pgtrb(request):
         'posts': Post.objects.filter(tag='PG-TRB'),
         'announces': Announcement.objects.all().order_by('-id')[:7]
     }
-    print(Post.objects.filter(tag='PG-TRB'))
+
     return render(request, "posts/pgtrb.html",context)
 
 def polytrb(request):

@@ -5,5 +5,25 @@
     document.location = "{% url 'polytrb' %}";
     }
 </script>
-POLYTRB
+<br>
+<div class="card" style="padding: 5%">
+    <h2>POLY TRB - Polytechnic Teacher Recruitment Board Training Program</h2>
+    <p>This program gives you the best materials and guidance to compete in the Polytechnic TRB examinations.</p>
+</div>
+<br>
+<div style="width: 100%;">
+    {% for Post in posts reversed %}
+    <div class="post-body">
+        <div class="post-head">{{Post.title}}</div>
+        <div class="post-content">
+            {{Post.content|safe}}
+            {% if user.is_authenticated %}
+            <a href=/adminblog/post/{{Post.id}}/change>Edit</a>
+            {% endif %}
+            <hr style="margin-bottom: 0">
+        </div>  
+        <div class="post-sub">{{Post.date_posted|date:"F d, Y"}} - Posted by {{Post.author}}</div>
+    </div><br>
+    {% endfor %}
+</div>
 {% endblock content %}
