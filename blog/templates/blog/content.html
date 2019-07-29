@@ -23,6 +23,7 @@
             </div>  
             <div class="post-sub">{{Post.date_posted|date:"F d, Y"}} - Posted by {{Post.author}}
                 <a href="http://{{Post.link}}" class="fa fa-download" style="color: black"></a>
+                <a href=/admin/blog/post/{{Post.id}}/change>Edit</a>
             </div>
         </div><br>
         {% endfor %}

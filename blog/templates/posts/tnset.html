@@ -12,4 +12,23 @@
     <p>This program gives you the best materials and guidance to compete in the TNSET examinations.</p>
 </div>
 <br>
+{% for post in posts %}
+<div class="row">
+    <div class="left">
+        {% for Post in posts reversed %}
+        <div class="post-body">
+            <div class="post-head">{{Post.title}}</div>
+            <div class="post-content">
+                {{Post.content|safe}}
+                <hr style="margin-bottom: 0">
+            </div>  
+            <div class="post-sub">{{Post.date_posted|date:"F d, Y"}} - Posted by {{Post.author}}
+                <a href="http://{{Post.link}}" class="fa fa-download" style="color: black"></a>
+                <a href=/admin/blog/post/{{Post.id}}/change>Edit</a>
+            </div>
+        </div><br>
+        {% endfor %}
+    </div>
+</div>
+{% endfor %}
 {% endblock content %}
