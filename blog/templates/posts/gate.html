@@ -1,15 +1,15 @@
-{% extends "blog/mobile/base.html" %}
+{% extends "blog/base.html" %}
 {% block content %}
 <script type="text/javascript"> 
-    if (screen.width > 699) {
-    document.location = "{% url 'engrtrb' %}";
+    if (screen.width <= 699) {
+    document.location = "{% url 'mgate' %}";
     }
 </script>
 <br>
 <div class="card" style="padding: 5%">
-    <h2>ENGR/CLGE TRB - Engineering College Teacher Recruitment Board Training Program</h2>
+    <h2>GATE - Graduate Aptitude Test in Engineering</h2>
     <hr>
-    <p>This program gives you the best materials and guidance to compete in the PGTRB examinations.</p>
+    <p>This program gives you the best materials and guidance to compete in the GATE examinations.</p>
 </div>
 <br>
 <div style="width: 100%;">

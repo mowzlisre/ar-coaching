@@ -123,3 +123,10 @@ def tnset(request):
         'announces': Announcement.objects.all().order_by('-id')[:7]
     }
     return render(request, "posts/mobile/tnset.html",context)
+
+def gate(request):
+    context={
+        'posts': Post.objects.filter(tag='GATE'),
+        'announces': Announcement.objects.all().order_by('-id')[:7]
+    }
+    return render(request, "posts/mobile/gate.html",context)

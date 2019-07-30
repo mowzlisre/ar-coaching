@@ -17,8 +17,9 @@
             <li><a href="{% url 'content' %}">AR Coaching Center</a></li>
             <li><a href="{% url 'pgtrb' %}">PG TRB</a></li> 
             <li><a href="{% url 'polytrb' %}">POLY TRB</a></li> 
-            <li><a href="{% url 'engrtrb' %}">ENGR/CLGE TRB</a></li> 
-            <li><a href="{% url 'tnset' %}">TNSET</a></li> 
+            <li><a href="{% url 'engrtrb' %}">ENGG TRB</a></li> 
+            <li><a href="{% url 'tnset' %}">TNSET</a></li>
+            <li><a href="{% url 'gate' %}">GATE</a></li> 
             {% if not user.is_authenticated %}
             <li style="float: right; padding-top: 3px; margin-left: -10px"><a href="{% url 'login' %}" class="fa fa-user"></a></li>
             {% else %}

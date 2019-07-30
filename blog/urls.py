@@ -19,9 +19,11 @@ urlpatterns = [
     path('polytrb/', views.polytrb, name='polytrb'),
     path('engrtrb/', views.engrtrb, name='engrtrb'),
     path('tnset/', views.tnset, name='tnset'),
+    path('gate/', views.gate, name='gate'),
 #posts-routes mobile-path
     path('m/pgtrb/', mviews.pgtrb, name='mpgtrb'),
     path('m/polytrb/', mviews.polytrb, name='mpolytrb'),
     path('m/engrtrb/', mviews.engrtrb, name='mengrtrb'),
     path('m/tnset/', mviews.tnset, name='mtnset'),
+    path('m/gate/', mviews.gate, name='mgate'),
 ]
