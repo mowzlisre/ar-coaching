@@ -26,7 +26,8 @@
 <div class="row">
     <div class="left">
         {% for Post in posts reversed %}
-        <div class="post-head">
+        <div class="post-body">
+            <div class="post-head">
                 <div>
                         <b style="font-size: 32px">{{Post.date_posted|date:"d"}}</b>
                         <c style="margin-top: 3%">{{Post.date_posted|date:"F, Y"}}</c>
@@ -49,6 +50,9 @@
             </div>
         </div><br>
         {% endfor %}
+    </div>
+    <div class="right">
+        <img src="/static/img/logo.png" alt="" width="100%">
     </div>
 </div>
 {% endfor %}
