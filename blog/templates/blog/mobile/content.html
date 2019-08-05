@@ -5,8 +5,9 @@
     document.location = "{% url 'content' %}";
     }
 </script>
-    <img src="/static/img/head.jpg" style="box-shadow: 1px 1px 10px grey; width: 100%; padding:0">
+    <img src="/static/img/banner.jpg" width="100%">
     <br><br>
+    <h4 style="padding: 5px">Recent Posts:</h4>
 <div style="width: 100%;">
     {% for Post in posts reversed %}
     <div class="post-body">
