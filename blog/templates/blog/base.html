@@ -12,22 +12,25 @@
     <title>AR Coaching Center</title>
 </head>
 <body style="background-color: rgb(238, 238, 238)">
-    <nav>
+    <nav style="text-align: center; padding: 3%; height: 180px;">
+            <a href="{% url 'content' %}" style="text-decoration: none"><b style="color: white; font-size: 24px;">AR COACHING CENTRE</b></a>
+            <p style="color: white">Centre of Excellence in Physics</p>
+    </nav>  
+    <nav style="background-color: white; box-shadow: 1px 1px 5px grey">
         <ul>
-            <li><a href="{% url 'content' %}">AR Coaching Center</a></li>
-            <li><a href="{% url 'pgtrb' %}">PG TRB</a></li> 
-            <li><a href="{% url 'polytrb' %}">POLY TRB</a></li> 
-            <li><a href="{% url 'engrtrb' %}">ENGG TRB</a></li> 
-            <li><a href="{% url 'tnset' %}">TNSET</a></li>
-            <li><a href="{% url 'gate' %}">GATE</a></li> 
+            <li><a href="{% url 'pgtrb' %}" style="color: rgb(0, 117, 252)">PG TRB</a></li> 
+            <li><a href="{% url 'polytrb' %}" style="color: rgb(0, 117, 252)">POLY TRB</a></li> 
+            <li><a href="{% url 'engrtrb' %}" style="color: rgb(0, 117, 252)">ENGG TRB</a></li> 
+            <li><a href="{% url 'tnset' %}" style="color: rgb(0, 117, 252)">TNSET</a></li>
+            <li><a href="{% url 'gate' %}" style="color: rgb(0, 117, 252)">GATE</a></li> 
             {% if not user.is_authenticated %}
-            <li style="float: right; padding-top: 3px; margin-left: -10px"><a href="{% url 'login' %}" class="fa fa-user"></a></li>
+            <li style="float: right; padding-top: 3px; margin-left: -10px"><a href="{% url 'login' %}" class="fa fa-user" style="color: rgb(0, 117, 252)"></a></li>
             {% else %}
-            <li style="float: right; padding-top: 3px; margin-left: -10px"><a href="{% url 'logout' %}" class="fa fa-sign-out"></a></li>
-            <li style="float: right; padding-top: 3px; margin-left: -10px"><a href="{% url 'createpost' %}" class="fa fa-pencil"></a></li>
+            <li style="float: right; padding-top: 3px; margin-left: -10px"><a href="{% url 'logout' %}" class="fa fa-sign-out" style="color: rgb(0, 117, 252)"></a></li>
+            <li style="float: right; padding-top: 3px; margin-left: -10px"><a href="{% url 'createpost' %}" class="fa fa-pencil" style="color: rgb(0, 117, 252)"></a></li>
             {% endif %}
-            <li style="float: right"><a href="{% url 'about' %}">About Us</a></li> 
-            <li style="float: right"><a href="{% url 'content' %}">Blog</a></li>       
+            <li style="float: right"><a href="{% url 'about' %}" style="color: rgb(0, 117, 252)">About Us</a></li> 
+            <li style="float: right"><a href="{% url 'content' %}" style="color: rgb(0, 117, 252)">Blog</a></li>       
         </ul>  
     </nav>
     <div class="container">
@@ -36,7 +39,7 @@
         {% endblock content %} 
     </div>
     
-    <footer style="height: 220px">
+    <footer style="height: 250px">
         <div class="row">
             <div class="left" style="text-align: left; padding-left: 10%; padding-top: 1%">
                 <label style="color: white">Quick Links</label><br>  
@@ -50,8 +53,9 @@
             <div class="right" style="border-left: 2px solid white; text-align: left">
                 <br>
                 <div style="padding-left: 3%">
-                    AR Coaching Center for Physics,<br>
+                    AR Coaching Center,<br>
                     Sakthi Tuition Center,<br>
+                    Near Raja Theatre, Raja Nagar,<br>                    
                     Kallakurichi (Dt),<br>
                     Pin Code - 606 202
                 </div>
