@@ -12,9 +12,9 @@
     <title>AR Coaching Center</title>
 </head>
 <body style="background-color: rgb(238, 238, 238)">
-    <nav style="text-align: center; padding: 3%; height: 180px;">
-            <a href="{% url 'content' %}" style="text-decoration: none"><b style="color: white; font-size: 24px;">AR COACHING CENTRE</b></a>
-            <p style="color: white">Centre of Excellence in Physics</p>
+    <nav style="text-align: center; padding: 1%; height: 75px; float: left">
+        <img src="/static/img/logo-head.PNG" alt="" height="50" width="100"style="border-radius: 5px; margin-top: -10px">
+        <a href="{% url 'content' %}" style="text-decoration: none"><b style="color: white; font-size: 24px; padding-top: 2%">AR COACHING CENTRE</b></a>        
     </nav>  
     <nav style="background-color: white; box-shadow: 1px 1px 5px grey">
         <ul>
@@ -30,7 +30,8 @@
             <li style="float: right; padding-top: 3px; margin-left: -10px"><a href="{% url 'createpost' %}" class="fa fa-pencil" style="color: rgb(0, 117, 252)"></a></li>
             {% endif %}
             <li style="float: right"><a href="{% url 'about' %}" style="color: rgb(0, 117, 252)">About Us</a></li> 
-            <li style="float: right"><a href="{% url 'content' %}" style="color: rgb(0, 117, 252)">Blog</a></li>       
+            <li style="float: right"><a href="{% url 'content' %}" style="color: rgb(0, 117, 252)">Home</a></li>  
+            <li style="float: right"></li>     
         </ul>  
     </nav>
     <div class="container">
@@ -39,10 +40,11 @@
         {% endblock content %} 
     </div>
     
-    <footer style="height: 250px">
+    <footer style="height: 215px">
         <div class="row">
             <div class="left" style="text-align: left; padding-left: 10%; padding-top: 1%">
                 <label style="color: white">Quick Links</label><br>  
+                <a style="color: white" href="{% url 'content' %}">Home</a><br>
                 <a style="color: white" href="{% url 'pgtrb' %}">PG TRB</a><br>
                 <a style="color: white" href="{% url 'polytrb' %}">POLY TRB</a><br>
                 <a style="color: white" href="{% url 'engrtrb' %}">ENGG TRB</a><br>
@@ -53,13 +55,13 @@
             <div class="right" style="border-left: 2px solid white; text-align: left">
                 <br>
                 <div style="padding-left: 3%">
-                    AR Coaching Center,<br>
+                    A R COACHING CENTRE,<br>
                     Sakthi Tuition Center,<br>
                     Near Raja Theatre, Raja Nagar,<br>                    
                     Kallakurichi (Dt),<br>
                     Pin Code - 606 202
                 </div>
-                <i class="fa fa-phone" style="margin-bottom: -30px"></i>+91 88838 66366 <br>
+                
                 <i class="fa fa-envelope" style="margin-top: -10px"></i> contact@arccp.com
                 
             </div>

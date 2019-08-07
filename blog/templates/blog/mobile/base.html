@@ -72,8 +72,9 @@
     </div>
   <nav>
     <ul style="padding-right: 10; padding-left: 0">
-        <li><span style="font-size:24px;cursor:pointer" onclick="openNav()" class="fa fa-bars"></span></li>
-        <li><a href="{% url 'mcontent' %}" style="color: white">AR Coaching Center</a></li>
+        <li><span style="font-size:24px;cursor:pointer;" onclick="openNav()" class="fa fa-bars"></span></li>
+        <li><img src="/static/img/logo-head.PNG" alt="" height="40" width="80"style="padding-top: 12px; padding-left: 15px"></li>
+        <li><a href="{% url 'mcontent' %}" style="color: white; padding-left: 0px">A R Coaching Center</a></li>
         {% if not user.is_authenticated %}
         <li style="float: right; padding-top: 3px; margin-left: -10px"><a href="{% url 'mlogin' %}" class="fa fa-user"></a></li>
         {% else %}
@@ -106,7 +107,6 @@
                     Kallakurichi (Dt),<br>
                     Pin Code - 606 202
                 </div>
-                <i class="fa fa-phone" style="margin-bottom: -30px; padding-left: 0px"></i>+91 88838 66366 <br>
                 <i class="fa fa-envelope" style="margin-top: -10px; padding-left: 0px"></i>contact@arccp.com
             </div>
         </div>

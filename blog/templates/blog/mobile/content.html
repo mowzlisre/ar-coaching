@@ -5,19 +5,19 @@
     document.location = "{% url 'content' %}";
     }
 </script>
-    <img src="/static/img/banner.jpg" width="100%">
+    <img src="/static/img/banner.jpg" width="110%" style="margin-left: -15px">
     <br><br>
-    <h4 style="padding: 5px">Recent Posts:</h4>
+    <h5 style="padding: 5px">Recent Posts:</h5>
 <div style="width: 100%;">
     {% for Post in posts reversed %}
     <div class="post-body">
             <div class="post-head">
                 <div>
-                        <b style="font-size: 32px">{{Post.date_posted|date:"d"}}</b>
+                        <b style="font-size: 18px">{{Post.date_posted|date:"d"}}</b>
                         <c style="margin-top: 3%">{{Post.date_posted|date:"F, Y"}}</c>
-                        <a href="http://{{Post.link}}" class="fa fa-download" style="color: white; float: right; padding-top: 18px"></a>
+                        <a href="http://{{Post.link}}" class="fa fa-download" style="color: white; float: right; padding-top: 6px"></a>
                         {% if user.is_authenticated %}
-                        <a style="color: white; float: right; padding-top: 14px" href=/admin/blog/post/{{Post.id}}/change>Edit</a>
+                        <a style="color: white; float: right; padding-top: 2px" href=/admin/blog/post/{{Post.id}}/change>Edit</a>
                         {% endif %}
                 </div>
             </div>
