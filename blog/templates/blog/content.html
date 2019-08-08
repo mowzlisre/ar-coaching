@@ -6,7 +6,7 @@
     }
 </script>
 <div>
-    <img src="/static/img/head.jpg" width="100%" style="box-shadow: 1px 1px 10px grey">
+    <img src="/static/img/banner2.jpg" width="100%" style="box-shadow: 1px 1px 10px grey">
 </div>
 <br>
 <div class="row">
@@ -15,16 +15,16 @@
         <div class="post-body">
             <div class="post-head">
                 <div>
-                        <b style="font-size: 32px">{{Post.date_posted|date:"d"}}</b>
+                        <b style="font-size: 18px">{{Post.date_posted|date:"d"}}</b>
                         <c style="margin-top: 3%">{{Post.date_posted|date:"F, Y"}}</c>
-                        <a href="http://{{Post.link}}" class="fa fa-download" style="color: white; float: right; padding-top: 18px"></a>
+                        <a href="http://{{Post.link}}" class="fa fa-download" style="color: white; float: right; padding-top: 6px"></a>
                         {% if user.is_authenticated %}
-                        <a style="color: white; float: right; padding-top: 14px" href=/admin/blog/post/{{Post.id}}/change>Edit</a>
+                        <a style="color: white; float: right; padding-top: 2px" href=/admin/blog/post/{{Post.id}}/change>Edit</a>
                         {% endif %}
                 </div>
             </div>
             <div class="post-content">
-                <h4 style="color: rgb(39, 39, 39)">{{Post.title}}</h4>
+                <h5 style="color: rgb(39, 39, 39)">{{Post.title}}</h5>
                 {{Post.content|safe}}
                 {% if user.is_autheticated %}
                 <a href=/admin/blog/post/{{Post.id}}/change>Edit</a>

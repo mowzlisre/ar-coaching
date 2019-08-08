@@ -12,7 +12,8 @@
     <hr>
     <label style="text-align: justify; color: blue">We care and concern to give you the best in every thing since we hold the responsibility for the most important step in your life. So what we bring to you here?</label>
     <p style="color: darkblue"><i class="fa fa-circle" style="color: blue; font-size: 8px"></i> Excellent Materials provided. <br>
-    <i class="fa fa-circle" style="color: blue; font-size: 8px"></i> Every unit consist of two half unit tests with 30 questions each, one problems test of 25 questions and one full unit test of 150.<br>
+    <i class="fa fa-circle" style="color: blue; font-size: 8px"></i> Every unit consist of two half unit tests with 50 questions each, one problems test of 50 questions and one full unit test of 150.<br>
+    <i class="fa fa-circle" style="color: blue; font-size: 8px"></i> Regular test paper with answering and discussion sessions shall be held. <br>
     <i class="fa fa-circle" style="color: blue; font-size: 8px"></i> Finally four half portion test and five full portion test will be conducted. <br>
     <i class="fa fa-circle" style="color: blue; font-size: 8px"></i> Mathematical physics shall be handled by well versed mathematicians.<br>
     <i class="fa fa-circle" style="color: blue; font-size: 8px"></i> Electronics units shall be handled by enthusiastic professors of great knowledge over electronics department.
@@ -36,7 +37,7 @@
         </label>
         <label style="color: blue">Mr. C. Periasamy M.Sc., M.Phil., B.Ed.,
             <p style="color: darkblue">PG Teacher in mathematics - PGTRB<br>
-            (Mathematical Physics)</p>
+            (For Mathematical Physics)</p>
         </label>
     </p>
 </div>
@@ -48,16 +49,16 @@
         <div class="post-body">
             <div class="post-head">
                 <div>
-                        <b style="font-size: 32px">{{Post.date_posted|date:"d"}}</b>
+                        <b style="font-size: 18px">{{Post.date_posted|date:"d"}}</b>
                         <c style="margin-top: 3%">{{Post.date_posted|date:"F, Y"}}</c>
-                        <a href="http://{{Post.link}}" class="fa fa-download" style="color: white; float: right; padding-top: 18px"></a>
+                        <a href="http://{{Post.link}}" class="fa fa-download" style="color: white; float: right; padding-top: 6px"></a>
                         {% if user.is_authenticated %}
-                        <a style="color: white; float: right; padding-top: 14px" href=/admin/blog/post/{{Post.id}}/change>Edit</a>
+                        <a style="color: white; float: right; padding-top: 2px" href=/admin/blog/post/{{Post.id}}/change>Edit</a>
                         {% endif %}
                 </div>
             </div>
             <div class="post-content">
-                <h4 style="color: rgb(39, 39, 39)">{{Post.title}}</h4>
+                <h5 style="color: rgb(39, 39, 39)">{{Post.title}}</h5>
                 {{Post.content|safe}}
                 {% if user.is_autheticated %}
                 <a href=/admin/blog/post/{{Post.id}}/change>Edit</a>
