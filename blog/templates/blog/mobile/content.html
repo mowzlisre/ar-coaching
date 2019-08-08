@@ -5,9 +5,9 @@
     document.location = "{% url 'content' %}";
     }
 </script>
-    <img src="/static/img/banner.jpg" width="110%" style="margin-left: -15px">
+    <img src="/static/img/banner.jpg" width="100%">
     <br><br>
-    <h5 style="padding: 5px">Recent Posts:</h5>
+    <h4 style="padding-left: 2%;margin-top: -3% ;">Recent Posts:</h4>
 <div style="width: 100%;">
     {% for Post in posts reversed %}
     <div class="post-body">
@@ -30,7 +30,7 @@
                 <hr style="margin: 0">
             </div>  
             <div class="post-sub">
-                <p style="margin: 0">Posted by {{Post.author}}</p>
+                <p style="margin: 0">Posted by {{Post.author}} - <b>{{Post.tag}}</b></p>
             </div>
         </div><br>
     {% endfor %}

@@ -56,25 +56,25 @@
     </style>
 </head>
 <body style="background-color: rgb(238, 238, 238)">
-    <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a style="margin-left: -15">AR Coaching</a>
-        <a style="font-size: 14px; color: rgb(95, 95, 95)" href="{% url 'mpgtrb' %}">PGTRB</a>
-        <a style="font-size: 14px; color: rgb(95, 95, 95)" href="{% url 'mpolytrb' %}">POLYTRB</a>
-        <a style="font-size: 14px; color: rgb(95, 95, 95)" href="{% url 'mengrtrb' %}">ENGG/CLGE</a>
-        <a style="font-size: 14px; color: rgb(95, 95, 95)" href="{% url 'mtnset' %}">TNSET</a>
-        <a style="font-size: 14px; color: rgb(95, 95, 95)" href="{% url 'mcontent' %}">Blog</a>       
-        <a style="font-size: 14px; color: rgb(95, 95, 95)" href="{% url 'mabout' %}">About Us</a>
+    <div id="mySidenav" class="sidenav" style="background-color: rgba(0, 118, 252, 0.918); color: white;">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style=" color: white ">&times;</a>
+        <a style="margin-left: -15;">AR COACHING</a>
+        <a style="font-size: 14px; color: white" href="{% url 'mpgtrb' %}">PGTRB</a>
+        <a style="font-size: 14px; color: white" href="{% url 'mpolytrb' %}">POLYTRB</a>
+        <a style="font-size: 14px; color: white" href="{% url 'mengrtrb' %}">ENGG/CLGE</a>
+        <a style="font-size: 14px; color: white" href="{% url 'mtnset' %}">TNSET</a>
+        <a style="font-size: 14px; color: white" href="{% url 'mcontent' %}">Home</a>       
+        <a style="font-size: 14px; color: white" href="{% url 'mabout' %}">About Us</a>
         <a style="margin-left: -15">Announcements</a>
         {% for Announce in announces %}
-        <a style="font-size: 14px; color: rgb(95, 95, 95)">{{Announce.announcement}}</a>
+        <a style="font-size: 14px;">{{Announce.announcement}}</a>
         {% endfor %} 
     </div>
   <nav>
     <ul style="padding-right: 10; padding-left: 0">
         <li><span style="font-size:24px;cursor:pointer;" onclick="openNav()" class="fa fa-bars"></span></li>
         <li><img src="/static/img/logo-head.PNG" alt="" height="40" width="80"style="padding-top: 12px; padding-left: 15px"></li>
-        <li><a href="{% url 'mcontent' %}" style="color: white; padding-left: 0px">A R Coaching Center</a></li>
+        <li><a href="{% url 'mcontent' %}" style="color: white; padding-left: 0px"><b>A R COACHING CENTRE</b></a></li>
         {% if not user.is_authenticated %}
         <li style="float: right; padding-top: 3px; margin-left: -10px"><a href="{% url 'mlogin' %}" class="fa fa-user"></a></li>
         {% else %}
@@ -83,15 +83,16 @@
         {% endif %}
     </ul>  
 </nav>
-    <div class="container">
+    <div>
         {% block content %}
         {% endblock content %} 
     </div>
     
-    <footer style="height: 250px">
+    <footer style="height: 215px">
         <div class="row">
             <div class="left" style="text-align: left; padding-left: 10%; padding-top: 1%; width: 40%">
                 <label style="color: white">Quick Links</label><br>  
+                <a style="color: white" href="{% url 'mcontent' %}">HOME</a><br>
                 <a style="color: white" href="{% url 'mpgtrb' %}">PG TRB</a><br>
                 <a style="color: white" href="{% url 'mpolytrb' %}">POLY TRB</a><br>
                 <a style="color: white" href="{% url 'mengrtrb' %}">ENGG TRB</a><br>
@@ -101,7 +102,7 @@
             </div>
             <div class="right" style="border-left: 2px solid white; text-align: left; width: 60%; padding: 1% 3%">
                 <div style="padding-left: 3%">
-                    AR Coaching Center,<br>
+                    AR COACHING CENTRE,<br>
                     Sakthi Tuition Center,<br>
                     Near Raja Theatre, Raja Nagar,<br>                    
                     Kallakurichi (Dt),<br>
