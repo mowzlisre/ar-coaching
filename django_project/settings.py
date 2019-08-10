@@ -78,12 +78,13 @@ WSGI_APPLICATION = 'django_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgres',
-        'NAME': os.path.join(BASE_DIR, 'postgres'),
+        'ENGINE': 'django.db.backend.postgres',
+        'NAME': os.path.join(BASE_DIR, 'db.postgres'),
     }
 }
 
-
+DATABASE_URL = os.environ['DATABASE_URL']
+conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -142,3 +143,5 @@ CKEDITOR_CONFIGS={
         'width': "100%",
     },
 }
+
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
