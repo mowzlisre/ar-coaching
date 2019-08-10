@@ -22,8 +22,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 't#11(^xnf%kxwe=zv%o+0q=%da=#akx+kb_@ev$4f!e84lj$l9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-ALLOWED_HOSTS = ['arr-coaching.herokuapp.com']
+DEBUG = False
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -83,8 +83,7 @@ DATABASES = {
     }
 }
 
-DATABASE_URL = os.environ['DATABASE_URL']
-conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -143,5 +142,3 @@ CKEDITOR_CONFIGS={
         'width': "100%",
     },
 }
-
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
