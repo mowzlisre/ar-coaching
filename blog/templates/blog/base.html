@@ -18,19 +18,19 @@
     </nav>  
     <nav style="background-color: white; box-shadow: 1px 1px 5px grey">
         <ul>
-            <li><a href="{% url 'pgtrb' %}" style="color: #48A8A7">PG TRB</a></li> 
-            <li><a href="{% url 'polytrb' %}" style="color: #48A8A7">POLY TRB</a></li> 
-            <li><a href="{% url 'engrtrb' %}" style="color: #48A8A7">ENGG TRB</a></li> 
-            <li><a href="{% url 'tnset' %}" style="color: #48A8A7">TNSET</a></li>
-            <li><a href="{% url 'gate' %}" style="color: #48A8A7">GATE</a></li> 
+            <li><a href="{% url 'pgtrb' %}" style="color: rgb(65, 151, 150)">PG TRB</a></li> 
+            <li><a href="{% url 'polytrb' %}" style="color: rgb(65, 151, 150)">POLY TRB</a></li> 
+            <li><a href="{% url 'engrtrb' %}" style="color: rgb(65, 151, 150)">ENGG TRB</a></li> 
+            <li><a href="{% url 'tnset' %}" style="color: rgb(65, 151, 150)">TNSET</a></li>
+            <li><a href="{% url 'gate' %}" style="color: rgb(65, 151, 150)">GATE</a></li> 
             {% if not user.is_authenticated %}
-            <li style="float: right; padding-top: 3px; margin-left: -10px"><a href="{% url 'login' %}" class="fa fa-user" style="color: #48A8A7"></a></li>
+            <li style="float: right; padding-top: 3px; margin-left: -10px"><a href="{% url 'login' %}" class="fa fa-user" style="color: rgb(65, 151, 150)"></a></li>
             {% else %}
-            <li style="float: right; padding-top: 3px; margin-left: -10px"><a href="{% url 'logout' %}" class="fa fa-sign-out" style="color: #48A8A7"></a></li>
-            <li style="float: right; padding-top: 3px; margin-left: -10px"><a href="{% url 'createpost' %}" class="fa fa-pencil" style="color: #48A8A7"></a></li>
+            <li style="float: right; padding-top: 3px; margin-left: -10px"><a href="{% url 'logout' %}" class="fa fa-sign-out" style="color: rgb(65, 151, 150)"></a></li>
+            <li style="float: right; padding-top: 3px; margin-left: -10px"><a href="{% url 'createpost' %}" class="fa fa-pencil" style="color: rgb(65, 151, 150)"></a></li>
             {% endif %}
-            <li style="float: right"><a href="{% url 'about' %}" style="color: #48A8A7">About Us</a></li> 
-            <li style="float: right"><a href="{% url 'content' %}" style="color: #48A8A7">Home</a></li>  
+            <li style="float: right"><a href="{% url 'about' %}" style="color: rgb(65, 151, 150)">About Us</a></li> 
+            <li style="float: right"><a href="{% url 'content' %}" style="color: rgb(65, 151, 150)">Home</a></li>  
             <li style="float: right"></li>     
         </ul>  
     </nav>

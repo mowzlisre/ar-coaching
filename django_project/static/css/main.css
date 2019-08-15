@@ -2,7 +2,7 @@ nav{
   overflow: hidden;
   list-style-type: none;
   display: block;
-  background-color: #48A8A7;
+  background-color: rgb(65, 151, 150);
   text-decoration: none;
   color: white;
   width: 100%;
@@ -20,7 +20,7 @@ li{
 }
 li a{
   display: inline-block;
-  color: #48A8A7;
+  color: rgb(65, 151, 150);
   text-align: center;
   padding: 14px 20px;
   text-decoration: none;
@@ -32,7 +32,7 @@ li a:hover {
 footer{
   padding: 14px;
   text-align: center;
-  background-color: #48A8A7;
+  background-color: rgb(65, 151, 150);
   color: white;
   width: 100%;
 }
@@ -53,7 +53,7 @@ footer{
   margin: 0 2%
 }
 .post-head{
-  background-color: #48A8A7;
+  background-color: rgb(65, 151, 150);
   width: 100%;
   padding: 8px 18px;
   color: white;
