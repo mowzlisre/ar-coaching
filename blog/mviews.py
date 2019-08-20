@@ -130,3 +130,10 @@ def gate(request):
         'announces': Announcement.objects.all().order_by('-id')[:7]
     }
     return render(request, "posts/mobile/gate.html",context)
+
+def sample(request):
+    context={
+        'posts': Post.objects.filter(tag='SAMPLE MATERIALS'),
+        'announces': Announcement.objects.all().order_by('-id')[:7]
+    }
+    return render(request, "posts/mobile/sample.html",context)

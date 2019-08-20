@@ -14,7 +14,7 @@
 <body style="background-color: rgb(238, 238, 238)">
     <nav style="text-align: center; padding: 1%; height: 75px; float: left">
         <img src="/static/img/logo-head.png" alt="" height="50" width="100"style="border-radius: 5px; margin-top: -10px">
-        <a href="{% url 'content' %}" style="text-decoration: none"><b style="color: white; font-size: 24px; padding-top: 2%">AR COACHING CENTRE</b></a>        
+        <a href="{% url 'content' %}" style="text-decoration: none"><b style="color: white; font-size: 24px; padding-top: 2%">A R COACHING CENTRE</b></a>        
     </nav>  
     <nav style="background-color: white; box-shadow: 1px 1px 5px grey">
         <ul>
@@ -23,6 +23,7 @@
             <li><a href="{% url 'engrtrb' %}" style="color: rgb(65, 151, 150)">ENGG TRB</a></li> 
             <li><a href="{% url 'tnset' %}" style="color: rgb(65, 151, 150)">TNSET</a></li>
             <li><a href="{% url 'gate' %}" style="color: rgb(65, 151, 150)">GATE</a></li> 
+            <li><a href="{% url 'sample' %}" style="color: rgb(65, 151, 150)">SAMPLE MATERIALS</a></li> 
             {% if not user.is_authenticated %}
             <li style="float: right; padding-top: 3px; margin-left: -10px"><a href="{% url 'login' %}" class="fa fa-user" style="color: rgb(65, 151, 150)"></a></li>
             {% else %}

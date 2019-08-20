@@ -56,45 +56,46 @@
     </style>
 </head>
 <body style="background-color: rgb(238, 238, 238)">
-    <div id="mySidenav" class="sidenav" style="background-color: rgb(65, 151, 150); color: white;">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style=" color: white ">&times;</a>
-        <a style="margin-left: -15;">AR COACHING</a>
-        <a style="font-size: 14px; color: white" href="{% url 'mpgtrb' %}">PGTRB</a>
-        <a style="font-size: 14px; color: white" href="{% url 'mpolytrb' %}">POLYTRB</a>
-        <a style="font-size: 14px; color: white" href="{% url 'mengrtrb' %}">ENGG/CLGE</a>
-        <a style="font-size: 14px; color: white" href="{% url 'mtnset' %}">TNSET</a>
-        <a style="font-size: 14px; color: white" href="{% url 'mgate' %}">GATE</a>   
-        <a style="font-size: 14px; color: white" href="{% url 'mcontent' %}">Home</a>       
-        <a style="font-size: 14px; color: white" href="{% url 'mabout' %}">About Us</a>
-        <a style="margin-left: -15">Announcements</a>
-        {% for Announce in announces %}
-        <a style="font-size: 14px;">{{Announce.announcement}}</a>
-        {% endfor %} 
-        <a style="font-size: 14px; color: white">AR COACHING CENTRE,<br>
-          Sakthi Tuition Center,<br>
-          Near Raja Theatre, Raja Nagar,<br>                    
-          Kallakurichi (Dt),<br>
-          Pin Code - 606 202</a>
-    </div>
-  <nav>
-    <ul style="padding-right: 10; padding-left: 0">
+    
+  <nav style="position: fixed; margin-top: -60px; width: 100%; z-index: 999">
+    <ul style="padding-right: 10; padding-left: 0;">
         <li><span style="font-size:24px;cursor:pointer;" onclick="openNav()" class="fa fa-bars"></span></li>
         <li><img src="/static/img/logo-head.png" alt="" height="40" width="80"style="padding-top: 12px; padding-left: 15px"></li>
         <li><a href="{% url 'mcontent' %}" style="color: white; padding-left: 0px"><b>A R COACHING CENTRE</b></a></li>
+        <li style="float: right; margin-left: -10px;"><a href="tel:+919361561415" class="fa fa-phone" style="font-size: 23px; color: orange"></a></li>
         {% if not user.is_authenticated %}
         <li style="float: right; padding-top: 3px; margin-left: -10px"><a href="{% url 'mlogin' %}" class="fa fa-user"></a></li>
         {% else %}
         <li style="float: right; padding-top: 3px; margin-left: -10px"><a href="{% url 'mlogout' %}" class="fa fa-sign-out"></a></li>
         <li style="float: right; padding-top: 3px; margin-left: -10px"><a href="{% url 'mcreatepost' %}" class="fa fa-pencil"></a></li>
         {% endif %}
-    </ul>  
-</nav>
-    <div>
+    </ul> 
+  </nav>
+    <div id="mySidenav" class="sidenav" style="background-color: rgb(65, 151, 150); color: white; margin-top: 56px">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style=" color: white; margin-top: -19px">&times;</a>
+      <a style="font-size: 14px; color: white; margin-top: -60px; border-bottom: 0.3px solid rgba(255, 255, 255, 0.589); border-top: 0.3px solid rgba(255, 255, 255, 0.589)" href="{% url 'mcontent' %}">HOME</a>       
+      <a style="font-size: 14px; color: white; border-bottom: 0.3px solid rgba(255, 255, 255, 0.589)" href="{% url 'mabout' %}">ABOUT US</a>
+      <a style="font-size: 14px; color: white; border-bottom: 0.3px solid rgba(255, 255, 255, 0.589)" href="{% url 'mpgtrb' %}">PGTRB</a>
+      <a style="font-size: 14px; color: white; border-bottom: 0.3px solid rgba(255, 255, 255, 0.589)" href="{% url 'mpolytrb' %}">POLYTRB</a>
+      <a style="font-size: 14px; color: white; border-bottom: 0.3px solid rgba(255, 255, 255, 0.589)" href="{% url 'mengrtrb' %}">ENGG/CLGE</a>
+      <a style="font-size: 14px; color: white; border-bottom: 0.3px solid rgba(255, 255, 255, 0.589)" href="{% url 'mtnset' %}">TNSET</a>
+      <a style="font-size: 14px; color: white; border-bottom: 0.3px solid rgba(255, 255, 255, 0.589)" href="{% url 'mgate' %}">GATE</a>
+      <a style="font-size: 14px; color: white; border-bottom: 0.3px solid rgba(255, 255, 255, 0.589)" href="{% url 'msample' %}">SAMPLE MATERIALS</a>
+      <a style="font-size: 16px; color: white;"><b>CONTACT US</b></a>
+      <a style="font-size: 14px; color: white; border-bottom: 0.3px solid rgba(255, 255, 255, 0.589); margin-top: -15px">AR COACHING CENTRE,<br>
+        Sakthi Tuition Center,<br>
+        Near Raja Theatre, Raja Nagar,<br>                    
+        Kallakurichi (Dt),<br>
+        Pin Code - 606 202,<br>
+        <a style="font-size: 14px; padding-top: 5px; color: white" href="tel:+919361561415"><i class="fa fa-phone" style="padding: 0; margin-left: -10px"></i> 9361561415,</a>
+        <a style="font-size: 14px; padding-top: 0; color: white" href="https://wa.me/918925493869"><i class="fa fa-whatsapp" style="padding: 0; margin-left: -10px"></i> 8925493869</a>
+      <a style="font-size: 14px; color: white; border-bottom: 0.3px solid rgba(255, 255, 255, 0.589)">Click on the numbers above to get redirected to our official WhatsApp Chat.</a>
+      </a>
+  </div> 
+    <div style="margin-top: 60px">
         {% block content %}
         {% endblock content %} 
     </div>
-    
-    
     <script>
         function openNav() {
           document.getElementById("mySidenav").style.width = "250px";

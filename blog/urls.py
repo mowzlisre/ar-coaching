@@ -20,10 +20,13 @@ urlpatterns = [
     path('engrtrb/', views.engrtrb, name='engrtrb'),
     path('tnset/', views.tnset, name='tnset'),
     path('gate/', views.gate, name='gate'),
+    path('sample/', views.sample, name='sample'),
+    
 #posts-routes mobile-path
     path('m/pgtrb/', mviews.pgtrb, name='mpgtrb'),
     path('m/polytrb/', mviews.polytrb, name='mpolytrb'),
     path('m/engrtrb/', mviews.engrtrb, name='mengrtrb'),
     path('m/tnset/', mviews.tnset, name='mtnset'),
     path('m/gate/', mviews.gate, name='mgate'),
+    path('m/sample', mviews.sample, name='msample')
 ]
