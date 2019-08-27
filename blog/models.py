@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from ckeditor.fields import RichTextField
 
 class Post(models.Model):
-	CHOICES=(('PG TRB','PG TRB'),('POLY TRB','POLY TRB'),('ENGG TRB','ENGR TRB'),('TNSET','TNSET'),('GATE','GATE'),('SAMPLE MATERIALS','SAMLPLE MATERIALS'))
+	CHOICES=(('PG TRB','PG TRB'),('POLY TRB','POLY TRB'),('ENGG TRB','ENGR TRB'),('TNSET','TNSET'),('GATE','GATE'),('SAMPLE MATERIALS','SAMPLE MATERIALS'))
 	title = models.CharField(max_length=255)
 	content = RichTextField()
 	date_posted = models.DateTimeField(default=timezone.now)
