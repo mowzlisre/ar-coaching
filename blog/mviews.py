@@ -13,17 +13,13 @@ from .forms import PostForm, AnnouncementForm
     
 def content(request):
     context={
-        'posts': Post.objects.all(),
+        'posts': Post.objects.exclude(tag='SAMPLE MATERIALS'),
         'announces': Announcement.objects.all().order_by('-id')[:7]
        }
     return render(request, 'blog/mobile/content.html',context)
 
 
 def about(request):
-    context={
-        'posts': Post.objects.all(),
-        'announces': Announcement.objects.all().order_by('-id')[:7]
-       }
     return render(request, 'blog/mobile/about.html',context)
 
 class LoginView(View):
@@ -105,14 +101,14 @@ def pgtrb(request):
 
 def polytrb(request):
     context={
-        'posts': Post.objects.filter(tag='POLY-TRB'),
+        'posts': Post.objects.filter(tag='POLY TRB'),
         'announces': Announcement.objects.all().order_by('-id')[:7]
     }
     return render(request, "posts/mobile/polytrb.html",context)
 
 def engrtrb(request):
     context={
-        'posts': Post.objects.filter(tag='ENGR-TRB'),
+        'posts': Post.objects.filter(tag='ENGR TRB'),
         'announces': Announcement.objects.all().order_by('-id')[:7]
     }
     return render(request, "posts/mobile/engrtrb.html",context)

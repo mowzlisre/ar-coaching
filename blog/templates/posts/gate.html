@@ -16,8 +16,9 @@
     <i class="fa fa-circle" style="color: blue; font-size: 8px"></i> Regular test paper with answering and discussion sessions shall be held. <br>
     <i class="fa fa-circle" style="color: blue; font-size: 8px"></i> Finally four half portion test and five full portion test will be conducted. <br>
     <i class="fa fa-circle" style="color: blue; font-size: 8px"></i> Mathematical physics shall be handled by well versed mathematicians.<br>
-    <i class="fa fa-circle" style="color: blue; font-size: 8px"></i> Electronics units shall be handled by enthusiastic professors of great knowledge over electronics department.
-    </p>
+    <i class="fa fa-circle" style="color: blue; font-size: 8px"></i> Electronics units shall be handled by enthusiastic professors of great knowledge over electronics department.<br>
+    <i class="fa fa-circle" style="color: blue; font-size: 8px"></i> Class timings: 9.30am - 5.00pm on Saturdays, Sundays and Government holidays.
+</p>
     <p style="color: orangered">Subject Handled by <br></p>
     <label style="color: blue">Dr. J. Elanchezhiyan M.Sc., M.Phil., Ph.D.,
         <p style="color: darkblue">Assistant professor,  Dept. of Physics<br>
@@ -51,7 +52,7 @@
                             <c style="margin-top: 3%">{{Post.date_posted|date:"F, Y"}}</c>
                             <a href="http://{{Post.link}}" class="fa fa-download" style="color: white; float: right; padding-top: 6px"></a>
                             {% if user.is_authenticated %}
-                            <a style="color: white; float: right; padding-top: 2px" href=/admin/blog/post/{{Post.id}}/change>Edit</a>
+                            <a style="color: white; float: right; padding-top: 2px" href=/$session/blog/post/{{Post.id}}/change>Edit</a>
                             {% endif %}
                     </div>
                 </div>
@@ -59,15 +60,13 @@
                     <h5 style="color: rgb(39, 39, 39)">{{Post.title}}</h5>
                     {{Post.content|safe}}
                     {% if user.is_autheticated %}
-                    <a href=/admin/blog/post/{{Post.id}}/change>Edit</a>
+                    <a href=/$session/blog/post/{{Post.id}}/change>Edit</a>
                     {% endif %}
                     <hr style="margin: 0">
                 </div>  
-                <div class="post-sub">
-                                    <p style="margin: 0">Posted by {{Post.author}} - <b>{{Post.tag}}</b></p>
-
-
-                </div>
+                <div class="post-sub" style="padding: 6px 24px">
+                <p style="margin: 0">Posted by {{Post.author}} - <b style="color: rgb(65, 151, 150)">{{Post.tag}}</b></p>
+            </div>
             </div><br>
             {% endfor %}
         </div>
