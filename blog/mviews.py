@@ -94,7 +94,7 @@ class PostDetailView(View):
 
 def pgtrb(request):
     context={
-        'posts': Post.objects.filter(tag='PG-TRB'),
+        'posts': Post.objects.filter(tag='PG TRB'),
         'announces': Announcement.objects.all().order_by('-id')[:7]
     }
     return render(request, "posts/mobile/pgtrb.html",context)
