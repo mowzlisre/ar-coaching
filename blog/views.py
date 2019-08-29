@@ -13,7 +13,7 @@ from .forms import PostForm, AnnouncementForm
     
 def content(request):
     context={
-        'posts': Post.objects.exclude(tag='SAMPLE MATERIALS'),
+        'posts': Post.objects.all().exclude(tag='SAMPLE MATERIALS'),
         'announces': Announcement.objects.all().order_by('-id')[:7]
        }
     return render(request, 'blog/content.html',context)
