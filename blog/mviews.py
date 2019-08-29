@@ -94,42 +94,42 @@ class PostDetailView(View):
 
 def pgtrb(request):
     context={
-        'posts': Post.objects.filter(tag='PG TRB'),
+        'posts': Post.objects.filter(tag='PG TRB').order_by('date_posted'),
         'announces': Announcement.objects.all().order_by('-id')[:7]
     }
     return render(request, "posts/mobile/pgtrb.html",context)
 
 def polytrb(request):
     context={
-        'posts': Post.objects.filter(tag='POLY TRB'),
+        'posts': Post.objects.filter(tag='POLY TRB').order_by('date_posted'),
         'announces': Announcement.objects.all().order_by('-id')[:7]
     }
     return render(request, "posts/mobile/polytrb.html",context)
 
 def engrtrb(request):
     context={
-        'posts': Post.objects.filter(tag='ENGR TRB'),
+        'posts': Post.objects.filter(tag='ENGR TRB').order_by('date_posted'),
         'announces': Announcement.objects.all().order_by('-id')[:7]
     }
     return render(request, "posts/mobile/engrtrb.html",context)
 
 def tnset(request):
     context={
-        'posts': Post.objects.filter(tag='TNSET'),
+        'posts': Post.objects.filter(tag='TNSET').order_by('date_posted'),
         'announces': Announcement.objects.all().order_by('-id')[:7]
     }
     return render(request, "posts/mobile/tnset.html",context)
 
 def gate(request):
     context={
-        'posts': Post.objects.filter(tag='GATE'),
+        'posts': Post.objects.filter(tag='GATE').order_by('date_posted'),
         'announces': Announcement.objects.all().order_by('-id')[:7]
     }
     return render(request, "posts/mobile/gate.html",context)
 
 def sample(request):
     context={
-        'posts': Post.objects.filter(tag='SAMPLE MATERIALS'),
+        'posts': Post.objects.filter(tag='SAMPLE MATERIALS').order_by('date_posted'),
         'announces': Announcement.objects.all().order_by('-id')[:7]
     }
     return render(request, "posts/mobile/sample.html",context)
