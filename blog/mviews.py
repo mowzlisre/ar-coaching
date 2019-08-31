@@ -20,7 +20,7 @@ def content(request):
 
 
 def about(request):
-    return render(request, 'blog/mobile/about.html',context)
+    return render(request, 'blog/mobile/about.html')
 
 class LoginView(View):
     template_name="blog/mobile/login.html"
