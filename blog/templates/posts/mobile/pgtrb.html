@@ -45,7 +45,7 @@
                     <div>
                             <b style="font-size: 18px">{{Post.date_posted|date:"d"}}</b>
                             <c style="margin-top: 3%">{{Post.date_posted|date:"F, Y"}}</c>
-                            <a href="http://{{Post.link}}" class="fa fa-download" style="color: orange; float: right; padding-top: 6px"></a>
+                            <a href="http://{{Post.link}}" class="fa fa-download" style="color: white; float: right; padding-top: 6px"></a>
                             {% if user.is_authenticated %}
                             <a style="color: white; float: right; padding-top: 2px" href=/$session/blog/post/{{Post.id}}/change>Edit</a>
                             {% endif %}
