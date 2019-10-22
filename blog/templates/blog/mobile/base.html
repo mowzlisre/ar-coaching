@@ -56,11 +56,13 @@
     </style>
 </head>
 <body style="background-color: rgb(238, 238, 238)">
-    
-  <nav style="position: fixed; margin-top: -60px; width: 100%; z-index: 999">
+  <nav style="height:51px; padding: 15px; position: fixed; margin-top: -61px">
+    <h3>Phone: 9361561415</h3>
+  </nav>  
+  <nav style="position: fixed; width: 100%; z-index: 999; margin-top: -10">
     <ul style="padding-right: 10; padding-left: 0;">
         <li><span style="font-size:24px;cursor:pointer;" onclick="openNav()" class="fa fa-bars"></span></li>
-        <li><a href="{% url 'mcontent' %}" style="color: white; padding-left: 0px"><b>A R COACHING CENTRE</b></a></li>
+        <li><a href="{% url 'mcontent' %}" style="color: white; padding-left: 10px; padding-top: 17px"><b>A R COACHING CENTRE</b></a></li>
         <li style="float: right; margin-left: -10px;"><a href="tel:+919361561415" class="fa fa-phone" style="font-size: 23px; color: orange"></a></li>
         {% if not user.is_authenticated %}
         <li style="float: right; padding-top: 3px; margin-left: -10px"><a href="{% url 'mlogin' %}" class="fa fa-user"></a></li>
