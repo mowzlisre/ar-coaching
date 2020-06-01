@@ -1,5 +1,6 @@
 {% load static %}
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,60 +9,70 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>A R Coaching Center</title>
 </head>
+
 <body style="background-color: rgb(238, 238, 238)">
     <nav style="text-align: center; padding: 1%; height: 75px; float: left">
-        <img src="/static/img/logo-head.png" alt="" height="50" width="100"style="border-radius: 5px; margin-top: -10px">
-        <a href="{% url 'content' %}" style="text-decoration: none"><b style="color: white; font-size: 24px; padding-top: 2%">A R COACHING CENTRE</b></a>        
-    </nav>  
+        <img src="/static/img/logo-head.png" alt="" height="50" width="100"
+            style="border-radius: 5px; margin-top: -10px">
+        <a href="{% url 'content' %}" style="text-decoration: none"><b
+                style="color: white; font-size: 24px; padding-top: 2%">A R COACHING CENTRE</b></a>
+    </nav>
     <nav style="background-color: white; box-shadow: 1px 1px 5px grey">
         <ul>
-            <li><a href="{% url 'pgtrb' %}" style="color: rgb(65, 151, 150)"><b>PG TRB</b></a></li> 
-            <li><a href="{% url 'polytrb' %}" style="color: rgb(65, 151, 150)"><b>POLY TRB</b></a></li> 
-                <li><a href="{% url 'engrtrb' %}" style="color: rgb(65, 151, 150)"><b>ENGG TRB</b></a></li> 
-                <li><a href="{% url 'tnset' %}" style="color: rgb(65, 151, 150)"><b>TNSET</b></a></li>
-                <li><a href="{% url 'gate' %}" style="color: rgb(65, 151, 150)"><b>UG TRB</b></a></li> 
-                <li><a href="{% url 'sample' %}" style="color: rgb(65, 151, 150)"><b>SAMPLE MATERIALS</b></a></li> 
+            <li><a href="{% url 'pgtrb' %}" style="color: rgb(65, 151, 150)"><b>PG TRB</b></a></li>
+            <li><a href="{% url 'polytrb' %}" style="color: rgb(65, 151, 150)"><b>POLY TRB</b></a></li>
+            <li><a href="{% url 'engrtrb' %}" style="color: rgb(65, 151, 150)"><b>ENGG TRB</b></a></li>
+            <li><a href="{% url 'tnset' %}" style="color: rgb(65, 151, 150)"><b>TNSET</b></a></li>
+            <li><a href="{% url 'gate' %}" style="color: rgb(65, 151, 150)"><b>UG TRB</b></a></li>
+            <li><a href="{% url 'sample' %}" style="color: rgb(65, 151, 150)"><b>SAMPLE MATERIALS</b></a></li>
             {% if not user.is_authenticated %}
-            <li style="float: right; padding-top: 3px; margin-left: -10px"><a href="{% url 'login' %}" class="fa fa-user" style="color: rgb(65, 151, 150)"></a></li>
+            <li style="float: right; padding-top: 3px; margin-left: -10px"><a href="{% url 'login' %}"
+                    class="fa fa-user" style="color: rgb(65, 151, 150)"></a></li>
             {% else %}
-            <li style="float: right; padding-top: 3px; margin-left: -10px"><a href="{% url 'logout' %}" class="fa fa-sign-out" style="color: rgb(65, 151, 150)"></a></li>
-            <li style="float: right; padding-top: 3px; margin-left: -10px"><a href="{% url 'createpost' %}" class="fa fa-pencil" style="color: rgb(65, 151, 150)"></a></li>
+            <li style="float: right; padding-top: 3px; margin-left: -10px"><a href="{% url 'logout' %}"
+                    class="fa fa-sign-out" style="color: rgb(65, 151, 150)"></a></li>
+            <li style="float: right; padding-top: 3px; margin-left: -10px"><a href="{% url 'createpost' %}"
+                    class="fa fa-pencil" style="color: rgb(65, 151, 150)"></a></li>
             {% endif %}
-            <li style="float: right"><a href="{% url 'about' %}" style="color: rgb(65, 151, 150)"><b>About Us</b></a></li> 
-            <li style="float: right"><a href="{% url 'content' %}" style="color: rgb(65, 151, 150)"><b>HOME</b></a></li>  
-            <li style="float: right"></li>     
-        </ul>  
+            <li style="float: right"><a href="{% url 'about' %}" style="color: rgb(65, 151, 150)"><b>About Us</b></a>
+            </li>
+            <li style="float: right"><a href="{% url 'content' %}" style="color: rgb(65, 151, 150)"><b>HOME</b></a></li>
+            <li style="float: right"></li>
+        </ul>
     </nav>
     <div style="padding: 1%">
-    <div style="background-color: white; margin: auto; width: 65%; box-shadow: 1px 1px 10px grey">
-        <div class="row" style="width: 100%; height: 40px">
-            <div class="left" style="width: 23%; background-color: rgb(65, 151, 150); padding: 8px; padding-left: 30px"> 
-                <b style="color: white">NEWS</b>                       
-            </div>
-            <div class="right" style="width: 77%; border-left: white; padding: 8px">
-                <marquee direction="left">
-                    {% for Announce in announces %}
-                    <img src="/static/img/new.gif" height=15 width=30>
-                    <a style="font-size: 14px; color: rgb(65, 151, 150)"><b>{{Announce.announcement}}</b></a>
-                    {% endfor %}
-                </marquee>
+        <div style="background-color: white; margin: auto; width: 65%; box-shadow: 1px 1px 10px grey">
+            <div class="row" style="width: 100%; height: 40px">
+                <div class="left"
+                    style="width: 23%; background-color: rgb(65, 151, 150); padding: 8px; padding-left: 30px">
+                    <b style="color: white">NEWS</b>
+                </div>
+                <div class="right" style="width: 77%; border-left: white; padding: 8px">
+                    <marquee direction="left">
+                        {% for Announce in announces %}
+                        <img src="/static/img/new.gif" height=15 width=30>
+                        <a style="font-size: 14px; color: rgb(65, 151, 150)"><b>{{Announce.announcement}}</b></a>
+                        {% endfor %}
+                    </marquee>
+                </div>
             </div>
         </div>
-    </div>
     </div>
     <div class="container" style="margin-top: -1%">
         <br>
         {% block content %}
-        {% endblock content %} 
+        {% endblock content %}
     </div>
-    
+    <div>        
+    </div>
     <footer style="height: 215px">
         <div class="row">
             <div class="left" style="text-align: left; padding-left: 10%; padding-top: 1%">
-                <label style="color: white">Quick Links</label><br>  
+                <label style="color: white">Quick Links</label><br>
                 <a style="color: white" href="{% url 'content' %}">HOME</a><br>
                 <a style="color: white" href="{% url 'pgtrb' %}">PG TRB</a><br>
                 <a style="color: white" href="{% url 'polytrb' %}">POLY TRB</a><br>
@@ -74,7 +85,7 @@
                 <div style="padding-left: 3%"><br>
                     A R COACHING CENTRE,<br>
                     Sakthi Tuition Center,<br>
-                    Near Raja Theatre, Raja Nagar,<br>                    
+                    Near Raja Theatre, Raja Nagar,<br>
                     Kallakurichi (Dt),<br>
                     Pin Code - 606 202<br>
                     Phone: +91 93615 61415,
@@ -82,8 +93,15 @@
             </div>
         </div>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
