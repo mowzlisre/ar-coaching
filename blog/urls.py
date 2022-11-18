@@ -28,5 +28,7 @@ urlpatterns = [
     path('m/engrtrb/', mviews.engrtrb, name='mengrtrb'),
     path('m/tnset/', mviews.tnset, name='mtnset'),
     path('m/gate/', mviews.gate, name='mgate'),
-    path('m/sample', mviews.sample, name='msample')
+    path('m/sample', mviews.sample, name='msample'),
+
+    path('temp', views.temp)
 ]

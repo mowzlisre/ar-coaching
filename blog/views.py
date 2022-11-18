@@ -7,8 +7,12 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import authenticate,login,logout
 from django.http import JsonResponse
 from .forms import PostForm, AnnouncementForm
+from rest_framework import serializers
 
-
+class PostSerializer(serializers.ModelSerializer):
+    class Meta():
+        model = Post
+        fields = '__all__'
 
     
 def content(request):
@@ -136,3 +140,10 @@ def sample(request):
         'announces': Announcement.objects.all().order_by('-id')[:7]
     }
     return render(request, "posts/sample.html",context)
+
+def temp(request):
+    blogs = Post.objects.all()
+    res = []
+    for blog in blogs:
+        res.append(PostSerializer(blog).data)
+    return JsonResponse(res, safe=False)
