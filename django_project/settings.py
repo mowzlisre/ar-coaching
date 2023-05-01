@@ -78,10 +78,9 @@ DATABASES = {
             'ENGINE': 'django.db.backends.postgresql',
             'NAME': 'postgres',
             'USER': 'postgres',
-            'PASSWORD': 'Arcc1234',
-            'HOST': 'database-1.cm64nzoyed5x.eu-west-2.rds.amazonaws.com',
+            'PASSWORD': 'Mowli123',
+            'HOST': 'arcc.ctcchoa2jcad.ap-south-1.rds.amazonaws.com',
             'PORT': '5432',
-            'TIME_ZONE': 'UTC'
         }
     }
 
