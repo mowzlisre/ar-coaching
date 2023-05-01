@@ -81,10 +81,7 @@ DATABASES = {
             'PASSWORD': 'Arcc1234',
             'HOST': 'database-1.cm64nzoyed5x.eu-west-2.rds.amazonaws.com',
             'PORT': '5432',
-            'OPTIONS': {
-                'connect_timeout': 60,
-                'options': '-c timezone=utc'
-            }
+            'TIME_ZONE': 'UTC'
         }
     }
 
