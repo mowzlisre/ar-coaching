@@ -82,8 +82,9 @@ DATABASES = {
             'HOST': 'database-1.cm64nzoyed5x.eu-west-2.rds.amazonaws.com',
             'PORT': '5432',
             'OPTIONS': {
-                'timezone': 'utc',
-            },
+                'connect_timeout': 60,
+                'options': '-c timezone=utc'
+            }
         }
     }
 
