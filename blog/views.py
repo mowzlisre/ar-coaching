@@ -8,6 +8,7 @@ from django.contrib.auth import authenticate,login,logout
 from django.http import JsonResponse
 from .forms import PostForm, AnnouncementForm
 from rest_framework import serializers
+import json
 
 class PostSerializer(serializers.ModelSerializer):
     class Meta():
@@ -25,8 +26,9 @@ def content(request):
 class JsonView(View):
     def get(self, request):
         posts = PostSerializer(Post.objects.all(), many=True).data
+        posts_json = json.dumps(posts)
         context = {
-            "posts" : posts
+            "posts" : posts_json
         }
         return render(request, 'json.html', context)
 
