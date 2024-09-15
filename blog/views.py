@@ -15,6 +15,11 @@ class PostSerializer(serializers.ModelSerializer):
         model = Post
         fields = '__all__'
 
+class AnnSerializer(serializers.ModelSerializer):
+    class Meta():
+        model = Announcement
+        fields = '__all__'
+
     
 def content(request):
     context={
@@ -25,7 +30,7 @@ def content(request):
 
 class JsonView(View):
     def get(self, request):
-        posts = PostSerializer(Post.objects.all(), many=True).data
+        posts = AnnSerializer(Announcement.objects.all(), many=True).data
         posts_json = json.dumps(posts)
         context = {
             "posts" : posts_json
