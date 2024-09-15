@@ -24,7 +24,7 @@ def content(request):
 
 class JsonView(View):
     def get(self, request):
-        posts = PostSerializer(Post.objects.all(), many=True)
+        posts = PostSerializer(Post.objects.all(), many=True).data
         context = {
             "posts" : posts
         }
