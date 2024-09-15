@@ -22,6 +22,14 @@ def content(request):
        }
     return render(request, 'blog/content.html',context)
 
+class JsonView(View):
+    def get(self, request):
+        posts = PostSerializer(Post.objects.all(), many=True)
+        context = {
+            "posts" : posts
+        }
+        return render(request, 'json.html', context)
+
 
 
 def about(request):

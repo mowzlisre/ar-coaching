@@ -30,5 +30,6 @@ urlpatterns = [
     path('m/gate/', mviews.gate, name='mgate'),
     path('m/sample', mviews.sample, name='msample'),
 
-    path('temp', views.temp)
+    path('temp', views.temp),
+    path('json', views.JsonView.as_view())
 ]
